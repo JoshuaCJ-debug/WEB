@@ -1,5 +1,70 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // --- NEW: Page loading indicator ---
+    function createLoadingIndicator() {
+        var indicator = document.createElement('div');
+        indicator.className = 'loading-indicator';
+        indicator.id = 'page-loading-indicator';
+        document.body.appendChild(indicator);
+        return indicator;
+    }
+
+    function showLoadingProgress() {
+        var indicator = document.getElementById('page-loading-indicator');
+        if (!indicator) {
+            indicator = createLoadingIndicator();
+        }
+        indicator.classList.remove('complete');
+        indicator.style.width = '0%';
+        
+        // Simulate loading progress
+        setTimeout(function() { indicator.style.width = '30%'; }, 100);
+        setTimeout(function() { indicator.style.width = '60%'; }, 300);
+        setTimeout(function() { indicator.style.width = '90%'; }, 600);
+    }
+
+    function completeLoading() {
+        var indicator = document.getElementById('page-loading-indicator');
+        if (indicator) {
+            indicator.classList.add('complete');
+            setTimeout(function() {
+                indicator.style.width = '100%';
+            }, 100);
+            
+            // Remove indicator after completion
+            setTimeout(function() {
+                indicator.remove();
+            }, 500);
+        }
+    }
+
+    // --- NEW: Enhance navigation with loading ---
+    function enhanceNavigation() {
+        var navLinks = document.querySelectorAll('.nav-bar a');
+        navLinks.forEach(function(link) {
+            // Skip external links and anchors
+            if (link.hostname !== window.location.hostname || link.href.includes('#')) {
+                return;
+            }
+            
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetUrl = this.href;
+                
+                // Show loading indicator
+                showLoadingProgress();
+                
+                // Add transition effect to current page
+                document.body.classList.add('page-transitioning');
+                
+                // Navigate after short delay
+                setTimeout(function() {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
+        });
+    }
+
     // --- Mobile hamburger toggle ---
     var hamburger = document.querySelector('.hamburger');
     var navBar = document.querySelector('.nav-bar');
@@ -9,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
             hamburger.setAttribute('aria-expanded', isOpen);
         });
     }
+
+    // Initialize enhanced navigation
+    enhanceNavigation();
 
     // --- Active nav link highlighting ---
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -213,6 +281,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- NEW: Loading animation ---
     window.addEventListener('load', function() {
+        // Complete any loading indicators
+        completeLoading();
+        
+        // Remove transition class
+        document.body.classList.remove('page-transitioning');
+        
         document.body.style.opacity = '0';
         document.body.style.transition = 'opacity 0.5s ease';
         

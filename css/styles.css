@@ -2,6 +2,41 @@
 /* Minify-friendly CSS - no unnecessary whitespace */
 /* Remove comments in production for smaller file size */
 
+/* Loading indicator styles */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #003399, #1e90ff, #003399);
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+@keyframes loading-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.loading-indicator.complete {
+    width: 100%;
+    animation: none;
+    background: #003399;
+}
+
+/* Page transition effects */
+.page-transitioning {
+    pointer-events: none;
+}
+
+.page-transitioning * {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
