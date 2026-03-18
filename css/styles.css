@@ -32,14 +32,31 @@
     background: rgba(0, 51, 153, 0.08);
 }
 
-/* Page transition effects - ultra lightweight */
+/* Page transition effects - ultra lightweight and smooth */
 .page-transitioning {
     pointer-events: none;
 }
 
 .page-transitioning * {
-    opacity: 0.95;
-    transition: opacity 0.15s ease;
+    opacity: 0.98;
+    transition: opacity 0.1s ease;
+    transform: translateY(1px);
+}
+
+/* Smooth page entrance animation */
+@keyframes smooth-entrance {
+    0% {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.page-entrance {
+    animation: smooth-entrance 0.4s ease-out;
 }
 
 * {
