@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.classList.add('page-transitioning');
                 
                 // Navigate immediately - no artificial delays
-                requestAnimationFrame(function() {
+                setTimeout(function() {
                     window.location.href = targetUrl;
-                }, 16); // Minimal 16ms delay for smooth feel
+                }, 50); // Reduced from 400ms to 50ms
             });
         });
     }
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- NEW: Loading animation - SMOOTH ENTRANCE ---
+    // --- NEW: Loading animation ---
     window.addEventListener('load', function() {
         // Complete any loading indicators
         completeLoading();
@@ -289,13 +289,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove transition class
         document.body.classList.remove('page-transitioning');
         
-        // Add smooth entrance animation
-        document.body.classList.add('page-entrance');
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
         
-        // Remove entrance class after animation
         setTimeout(function() {
-            document.body.classList.remove('page-entrance');
-        }, 400);
+            document.body.style.opacity = '1';
+        }, 100);
     });
 
     // --- Multi-step application form ---
