@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- NEW: Page loading indicator ---
+    // --- NEW: Page loading indicator - ULTRA LIGHTWEIGHT ---
     function createLoadingIndicator() {
         var indicator = document.createElement('div');
         indicator.className = 'loading-indicator';
@@ -14,31 +14,33 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!indicator) {
             indicator = createLoadingIndicator();
         }
-        indicator.classList.remove('complete');
-        indicator.style.width = '0%';
         
-        // Simulate loading progress
-        setTimeout(function() { indicator.style.width = '30%'; }, 100);
-        setTimeout(function() { indicator.style.width = '60%'; }, 300);
-        setTimeout(function() { indicator.style.width = '90%'; }, 600);
+        // Immediate lightweight progress - no delays
+        requestAnimationFrame(function() {
+            indicator.classList.add('loading');
+            indicator.style.width = '50%';
+        });
+        
+        // Complete quickly - just for visual feedback
+        requestAnimationFrame(function() {
+            indicator.style.width = '100%';
+        });
     }
 
     function completeLoading() {
         var indicator = document.getElementById('page-loading-indicator');
         if (indicator) {
+            indicator.classList.remove('loading');
             indicator.classList.add('complete');
-            setTimeout(function() {
-                indicator.style.width = '100%';
-            }, 100);
             
-            // Remove indicator after completion
+            // Remove immediately - no waiting
             setTimeout(function() {
                 indicator.remove();
-            }, 500);
+            }, 100);
         }
     }
 
-    // --- NEW: Enhance navigation with loading ---
+    // --- NEW: Enhance navigation with MINIMAL loading ---
     function enhanceNavigation() {
         var navLinks = document.querySelectorAll('.nav-bar a');
         navLinks.forEach(function(link) {
@@ -51,16 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 var targetUrl = this.href;
                 
-                // Show loading indicator
+                // Show loading indicator IMMEDIATELY
                 showLoadingProgress();
                 
-                // Add transition effect to current page
+                // Minimal transition - just slight opacity change
                 document.body.classList.add('page-transitioning');
                 
-                // Navigate after short delay
+                // Navigate immediately - no artificial delays
                 setTimeout(function() {
                     window.location.href = targetUrl;
-                }, 400);
+                }, 50); // Reduced from 400ms to 50ms
             });
         });
     }
