@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugema Univ. | Computing & Informatics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            /* very light blue background */
+            color: #000000;
+            /* black text */
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        /* main container for white cards */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 28px 28px 16px 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 128, 0.15);
+            overflow: hidden;
+            border: 1px solid #b0c4de;
+        }
+
+        /* header with logo area – blue/white */
+        .header {
+            background-color: #003399;
+            /* deep royal blue */
+            color: white;
+            padding: 1.8rem 2rem 1.4rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 5px solid #ffffff;
+        }
+
+        .logo-place {
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #003399;
+            border: 3px solid #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .dept-title {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 #000000;
+        }
+
+        .dept-sub {
+            font-size: 1.1rem;
+            color: #e0f0ff;
+        }
+
+        /* navigation – blue, white, black */
+        .nav-bar {
+            background-color: #000000;
+            /* black */
+            padding: 0.8rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            border-bottom: 2px solid #1e90ff;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 0.3rem 0.6rem;
+            transition: 0.2s;
+            border-radius: 30px;
+        }
+
+        .nav-bar a:hover {
+            background-color: #1e90ff;
+            /* dodger blue */
+            color: black;
+        }
+
+        /* main content area white, black text */
+        .main-content {
+            padding: 2rem 2rem 1rem 2rem;
+            background-color: #ffffff;
+        }
+
+        /* section containers – white, blue borders */
+        .card {
+            background-color: white;
+            border-left: 6px solid #003399;
+            border-radius: 0 20px 20px 0;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 51, 153, 0.15);
+            border-top: 1px solid #b0e0ff;
+            border-right: 1px solid #b0e0ff;
+            border-bottom: 1px solid #b0e0ff;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #003399;
+            /* blue headings */
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            border-bottom: 2px solid #000000;
+            padding-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        hr {
+            border: 1px solid #003399;
+            background-color: #000;
+            height: 2px;
+            margin: 1.2rem 0;
+        }
+
+        /* image styling */
+        .profile-img {
+            max-width: 160px;
+            border-radius: 50%;
+            border: 4px solid #003399;
+            box-shadow: 0 0 0 2px black;
+            background-color: #e6f0ff;
+        }
+
+        .dept-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            border: 2px solid #000;
+            margin-top: 1rem;
+        }
+
+        /* table timetable */
+        .timetable {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border: 2px solid #000;
+        }
+
+        .timetable th {
+            background-color: #003399;
+            color: white;
+            padding: 12px 8px;
+            font-size: 1.1rem;
+            border: 1px solid #000;
+        }
+
+        .timetable td {
+            border: 1px solid #000;
+            padding: 10px 8px;
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .timetable tr:nth-child(even) td {
+            background-color: #f0f8ff;
+            /* very light blue */
+        }
+
+        /* lists */
+        ul,
+        ol {
+            margin-left: 1.8rem;
+            margin-top: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* form */
+        .reg-form {
+            background: #f0f8ff;
+            padding: 1.8rem;
+            border-radius: 24px;
+            border: 2px solid #003399;
+            max-width: 550px;
+            margin: 1rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 600;
+            color: #003399;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #000;
+            border-radius: 40px;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            background: white;
+            padding: 0.8rem 1rem;
+            border-radius: 40px;
+            border: 2px solid black;
+        }
+
+        .radio-group label {
+            display: inline;
+            color: black;
+            font-weight: normal;
+        }
+
+        button {
+            background-color: #003399;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: 3px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            border-color: #003399;
+        }
+
+        /* link cards */
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1rem 0;
+        }
+
+        .link-card {
+            background: white;
+            border: 2px solid #003399;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card a {
+            color: #003399;
+            text-decoration: none;
+        }
+
+        .link-card a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 1rem;
+            border-top: 5px solid #1e90ff;
+        }
+
+        /* small adjustments */
+        .flex-profile {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"> <!-- main white container -->
+
+        <!-- header with logo -->
+        <div class="header">
+            <div class="logo-place"><img src="images/Picture1.png" alt="" width="90px"></div>
+            <div>
+                <div class="dept-title">DEPARTMENT OF COMPUTING & INFORMATICS</div>
+                <div class="dept-sub">Bugema University · Faculty of Science & Technology</div>
+            </div>
+        </div>
+
+        <!-- navigation (multi-page simulation) -->
+        <div class="nav-bar">
+            <a href="#home"> HOME</a>
+            <a href="#about"> ABOUT</a>
+            <a href="#contact"> CONTACT</a>
+            <!-- anchor to combined tasks -->
+        </div>
+
+        <!-- main content area with all tasks integrated -->
+        <div class="main-content" id="home">
+
+            <!-- === HOME section (with image, paragraphs, lists, links) === -->
+            <div class="card" id="about">
+                <h1> Welcome to Computing & Informatics</h1>
+                <hr>
+                <p><strong>We are the pioneers of digital excellence at Bugema University.</strong> Our department
+                    blends theory with hands-on practice, producing graduates ready for the global tech stage. We focus
+                    on <span style="color:#003399; font-weight:bold;">artificial intelligence, cybersecurity, and
+                        software development</span>.</p>
+                <p>With modern labs and dedicated lecturers, every student builds a strong portfolio. The department
+                    also runs coding bootcamps, hackathons, and industry workshops. <em>Your future in tech starts
+                        here.</em></p>
+
+                
+
+                <!-- top 5 favourite lists (ordered + unordered) -->
+                <h2 style="margin-top:2rem;"> Top 5 favourite things</h2>
+                <div style="display:flex; gap:3rem; flex-wrap:wrap;">
+                    <div>
+                        <h3> FOOD</h3>
+                        <ol>
+                            <li>Rolex (chapati & eggs)</li>
+                            <li>Matoke with groundnuts</li>
+                            <li>Pilau</li>
+                            <li>Fried cassava</li>
+                            <li>Chapati & beans</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3> MOVIES</h3>
+                        <ul>
+                            <li>The Social Network</li>
+                            <li>Black Panther</li>
+                            <li>Snowden</li>
+                            <li>The Imitation Game</li>
+                            <li>Matrix</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3> GAMES </h3>
+                        <ul>
+                            <li>FIFA 24</li>
+                            <li>God of War</li>
+                            <li>Minecraft</li>
+                            <li>Call of Duty</li>
+                            <li>Chess.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- useful links (4 links new tab) -->
+                <div class="card" style="border-left-color:black; margin-top:0.5rem;">
+                    <h2>🔗 useful websites for students</h2>
+                    <div class="links-grid">
+                        <div class="link-card"><a href="https://www.w3schools.com" target="_blank"> W3Schools</a>
+                        </div>
+                        <div class="link-card"><a href="https://github.com" target="_blank"> GitHub</a></div>
+                        <div class="link-card"><a href="https://stackoverflow.com" target="_blank">💬 Stack Overflow</a>
+                        </div>
+                        <div class="link-card"><a href="https://www.kaggle.com" target="_blank"> Kaggle</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === profile page for one member (group task) === -->
+            <div class="card">
+                <h2> student profile: <span style="color:black;">JOSHUA AGABA</span></h2>
+                <div class="flex-profile">
+                    <!-- profile image (img as data uri) -->
+                    <img src="images/me.jpg"
+                        alt="profile icon" class="profile-img">
+                    <div>
+                        <h3 style="color:black;">bio</h3>
+                        <p>Joshua is a second-year IT student passionate about mobile app development and UI/UX. He
+                            leads the Google developer student club chapter and enjoys mentoring freshmen.</p>
+                        <h3>hobbies</h3>
+                        <ul>
+                            <li>Chess & board games</li>
+                            <li>Playing guitar</li>
+                            <li>Reading sci‑fi</li>
+                            <li>Hiking around Nile source</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === department timetable (with course, day, time) === -->
+            <div class="card" id="timetable">
+                <h2>weekly timetable – <span style="color:#003399;">course, day, time</span></h2>
+                <table class="timetable">
+                    <tr>
+                        <th>Course</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr>
+                        <td>Data Structures & Algorithms</td>
+                        <td>Monday</td>
+                        <td>09:00 – 11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Database Systems</td>
+                        <td>Monday</td>
+                        <td>12:00 – 14:00</td>
+                    </tr>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>Tuesday</td>
+                        <td>10:00 – 13:00</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems</td>
+                        <td>Wednesday</td>
+                        <td>09:00 – 11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Python Programming</td>
+                        <td>Thursday</td>
+                        <td>14:00 – 17:00</td>
+                    </tr>
+                    <tr>
+                        <td>Discrete Mathematics</td>
+                        <td>Friday</td>
+                        <td>08:00 – 10:00</td>
+                    </tr>
+                    <!-- actually more than 5 rows, fine -->
+                </table>
+            </div>
+
+            <!-- === registration form (student) === -->
+            <div class="card" style="background: white;">
+                <h2>📝 student registration form</h2>
+                <div class="reg-form">
+                    <form onsubmit="alert('demo: form submitted (no actual POST)'); return false;">
+                        <div class="form-group">
+                            <label>👤 Full name</label>
+                            <input type="text" placeholder="e.g., Kato Musa" required>
+                        </div>
+                        <div class="form-group">
+                            <label>📧 Email address</label>
+                            <input type="email" placeholder="student@bugemauniv.ac.ug" required>
+                        </div>
+                        <div class="form-group">
+                            <label>⚥ Gender</label>
+                            <div class="radio-group">
+                                <span><input type="radio" name="gender" value="male" id="m"> <label for="m"
+                                        style="display:inline;">Male</label></span>
+                                <span><input type="radio" name="gender" value="female" id="f"> <label for="f"
+                                        style="display:inline;">Female</label></span>
+                                
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit">✔️ Register</button>
+                        </div>
+                    </form>
+                </div>
+                <p style="font-size:0.9rem; margin-top:0.5rem;"></p>
+            </div>
+
+            <!-- === CONTACT section (with image & paragraphs) === -->
+            <div class="card" id="contact">
+                <h2>📬 contact us</h2>
+                
+                    alt="contact graphic"
+                    style="max-width:100%; background:white; border:2px solid black; border-radius:20px;">
+                <p><strong>📍 Main Campus:</strong> Bugema University, Luweero district, Central Uganda. Department
+                    office – Block D, room D12.</p>
+                <p><strong>📧 Email:</strong> computing@bugemauniv.ac.ug | <strong>📞 Phone:</strong> +256 312 345 678
+                </p>
+                <p><em>Office hours: Monday–Friday 9:00am – 4:00pm. Also find us on the university portal.</em></p>
+            </div>
+
+            <!-- one extra horizontal line (hr requirement multiple) -->
+            <hr style="background-color: #000; height: 3px;">
+
+            <!-- tiny note: this page includes everything: headings, paragraphs, lists, images, table, form, links, nav, containers -->
+            <p style="text-align:right; color:#003399;">© Department of Computing — Bugema University</p>
+        </div> <!-- end main-content -->
+
+        <footer>
+            <span style="color:white;">computing & informatics
+                bugema</span>
+        </footer>
+    </div> <!-- end container -->
+</body>
+
+</html>

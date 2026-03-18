@@ -1,0 +1,82 @@
+Objective: Modify your department website to include CSS, university colors, and all essential departmental information.
+
+
+Hosting: All groups are required to host their finished website on a free server.
+
+Presentation:
+
+Presentations will take place during class time.
+
+Marks are awarded individually.
+
+Participation is mandatory: "no presentation no marks".
+
+Qualities of a Good University Website
+A good faculty or department website should effectively communicate information, support teaching and research, and remain easy for students, staff, and visitors to navigate.
+
+1. Clear and Organized Structure 🗂️
+Arrange information logically with clear menus and sections.
+
+Ensure important areas like Departments, Programs, Staff, Research, and Admissions are easy to find.
+
+
+Recommended Sections: About the Faculty, Departments/Schools, Academic Programs, Research & Publications, News & Events, and Contact Information.
+
+2. User-Friendly Design 🎨
+Use a clean layout with readable fonts and appropriate colors.
+
+Maintain a consistent design across all pages.
+
+Ensure the design is mobile-friendly (responsive) for phones and tablets.
+
+3. Accurate and Updated Information 🔄
+Update content regularly to avoid providing outdated information.
+
+Keep staff profiles, course descriptions, announcements, academic calendars, and deadlines current.
+
+4. Detailed Academic Information 📚
+The website must clearly explain:
+
+Undergraduate and postgraduate programs.
+
+Course outlines, requirements, and admission criteria.
+
+Faculty research areas, publications, and projects.
+
+5. Faculty and Staff Profiles 👩‍🏫
+Individual profiles for lecturers or researchers should include:
+
+Name, title, and academic qualifications.
+
+Research interests and publications.
+
+Contact information.
+
+6. Accessibility and Inclusiveness ♿
+The site should be usable by people with disabilities.
+
+Include features such as alt text for images, high color contrast, and screen-reader compatibility.
+
+7. Fast Loading and Technical Reliability ⚡
+Pages should load quickly with minimal broken links or errors.
+
+Use a secure connection (HTTPS) to protect user data.
+
+8. Interactive Features 💻
+Useful tools to include:
+
+Online application portals and course registration systems.
+
+Downloadable forms, event registration, and student portals.
+
+9. Communication and Contact Information 📞
+Ensure users can easily find:
+
+Email addresses, phone numbers, and office locations.
+
+Inquiry forms for direct communication.
+
+10. News, Events, and Achievements 📰
+Highlight faculty achievements, conferences, seminars, and research breakthroughs.
+
+This keeps the academic community engaged and informed.

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Computing & Informatics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo-place"><img src="images/Picture1.png" alt="Bugema University Logo" width="90"></div>
+            <div>
+                <div class="dept-title">DEPARTMENT OF COMPUTING & INFORMATICS</div>
+                <div class="dept-sub">Bugema University · Faculty of Science & Technology</div>
+            </div>
+        </header>
+
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">MENU</button>
+
+        <nav class="nav-bar" aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="programs.html">PROGRAMS</a>
+            <a href="faculty.html">FACULTY</a>
+            <a href="research.html">RESEARCH</a>
+            <a href="news.html">NEWS & EVENTS</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="apply.html" class="nav-apply">APPLY NOW</a>
+        </nav>
+
+        <main class="main-content" id="main-content">
+
+            <!-- social media -->
+            <section class="card">
+                <h2>Connect With Us</h2>
+                <p>Follow the Department of Computing & Informatics on social media:</p>
+                <div class="social-row">
+                    <a href="#" class="social-link">
+                        <span class="social-icon icon-facebook"></span>
+                        Facebook
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="social-icon icon-twitter"></span>
+                        Twitter / X
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="social-icon icon-linkedin"></span>
+                        LinkedIn
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="social-icon icon-youtube"></span>
+                        YouTube
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="social-icon icon-github"></span>
+                        GitHub
+                    </a>
+                </div>
+            </section>
+
+            <!-- inquiry form -->
+            <section class="card">
+                <h2>Send Us an Inquiry</h2>
+                <div class="reg-form">
+                    <form id="inquiry-form">
+                        <div class="form-group">
+                            <label for="inq-name">Full Name</label>
+                            <input type="text" id="inq-name" placeholder="e.g., Kato Musa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inq-email">Email Address</label>
+                            <input type="email" id="inq-email" placeholder="student@bugemauniv.ac.ug" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inq-subject">Subject</label>
+                            <select id="inq-subject" required>
+                                <option value="">— Select a topic —</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="admissions">Admissions</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inq-message">Message</label>
+                            <textarea id="inq-message" placeholder="Type your message here..." rows="5" required></textarea>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit">Send Inquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- contact info -->
+            <section class="card">
+                <h1>Contact Us</h1>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon icon-location"></div>
+                        <div class="contact-details">
+                            <h3>Campus Location</h3>
+                            <p><strong>Main Campus:</strong> Bugema University, Luweero District, Central Uganda</p>
+                            <p><strong>Department Office:</strong> Block D, Room D12</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon icon-email"></div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:computing@bugemauniv.ac.ug" class="contact-link">computing@bugemauniv.ac.ug</a></p>
+                            <p class="contact-note">We respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon icon-phone"></div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+256312345678" class="contact-link">+256 312 345 678</a></p>
+                            <p class="contact-note">Office hours: Monday–Friday, 9:00 AM – 4:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon icon-portal"></div>
+                        <div class="contact-details">
+                            <h3>Online Portal</h3>
+                            <p><a href="#" class="contact-link">Visit University Portal</a></p>
+                            <p class="contact-note">Access resources and announcements</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="office-hours">
+                    <div class="hours-badge">
+                        <span class="hours-icon icon-clock"></span>
+                        <span class="hours-text">Office Hours: Mon–Fri, 9:00 AM – 4:00 PM</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer role="contentinfo">
+            &copy; Department of Computing & Informatics &middot; Bugema University
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
