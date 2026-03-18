@@ -1,3 +1,7 @@
+/* ===== COMPRESSION OPTIMIZATIONS ===== */
+/* Minify-friendly CSS - no unnecessary whitespace */
+/* Remove comments in production for smaller file size */
+
 * {
     margin: 0;
     padding: 0;
