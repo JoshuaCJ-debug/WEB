@@ -116,7 +116,7 @@ This website is hosted on GitHub Pages and can be accessed at:
 - Body text: Dark gray for readability
 
 ### Images
-- Logo: `images/Picture1.png`
+- Logo: `images/picture1.jpg`
 - Background images: `images/01.jpeg`, `images/02.jpeg`
 - Program backgrounds: `images/datascience.jpg`, `images/IT.jpg`, `images/sw.jpg`
 - Faculty photos: Various `.jpg` files in `images/` folder
