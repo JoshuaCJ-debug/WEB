@@ -1016,21 +1016,21 @@ footer {
 
 /* program-specific background images */
 .accordion-header.cs-program {
-    background: linear-gradient(rgba(0, 51, 153, 0.8), rgba(0, 51, 153, 0.8)), url('../images/datascience.jpg');
+    background: linear-gradient(rgba(0, 51, 153, 0.7), rgba(0, 51, 153, 0.7)), url('../images/datascience.jpg');
     background-size: cover;
     background-position: center;
     color: white;
 }
 
 .accordion-header.it-program {
-    background: linear-gradient(rgba(0, 51, 153, 0.8), rgba(0, 51, 153, 0.8)), url('../images/IT.jpg');
+    background: linear-gradient(rgba(0, 51, 153, 0.7), rgba(0, 51, 153, 0.7)), url('../images/IT.jpg');
     background-size: cover;
     background-position: center;
     color: white;
 }
 
 .accordion-header.se-program {
-    background: linear-gradient(rgba(0, 51, 153, 0.8), rgba(0, 51, 153, 0.8)), url('../images/sw.jpg');
+    background: linear-gradient(rgba(0, 51, 153, 0.7), rgba(0, 51, 153, 0.7)), url('../images/sw.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -1048,19 +1048,19 @@ footer {
 
 /* program-specific background images for content */
 .cs-program + .accordion-content {
-    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('../images/datascience.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('../images/datascience.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .it-program + .accordion-content {
-    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('../images/IT.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('../images/IT.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .se-program + .accordion-content {
-    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('../images/sw.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('../images/sw.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1272,7 +1272,7 @@ footer {
 
 /* explore section with background */
 .explore-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
                 url('../images/02.jpeg');
     background-size: cover;
     background-position: center;
@@ -1330,13 +1330,44 @@ footer {
 
 /* welcome section with background */
 .welcome-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
                 url('../images/01.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     border: 1px solid #e0e0e0;
+}
+
+/* about department section with background */
+.about-department-section {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('../images/depart.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.about-department-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 51, 153, 0.05) 0%, rgba(30, 144, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.about-department-section h1,
+.about-department-section h2,
+.about-department-section p,
+.about-department-section strong,
+.about-department-section em {
+    position: relative;
+    z-index: 1;
 }
 
 .welcome-section::before {
